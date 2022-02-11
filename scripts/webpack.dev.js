@@ -10,9 +10,12 @@ const devConfig = {
   },
   // 如何生成source map
   devtool: "eval-source-map",
+  // 终端额外日志只在发生错误时输出
+  stats: "errors-only",
   devServer: {
     // 默认打开localhost:8080
     open: true,
+    port: 8080,
   },
   cache: {
     // 持久化缓存，改善构建速度
@@ -20,7 +23,14 @@ const devConfig = {
   },
   plugins: [
     // 更好的显示开发报错信息
-    new FriendlyErrorsWebpackPlugin(),
+    new FriendlyErrorsWebpackPlugin({
+      // 成功的时候输出
+      compilationSuccessInfo: {
+        messages: ["Your application is running here: http://localhost:8080"],
+      },
+      // 是否每次都清空控制台
+      clearConsole: true,
+    }),
   ],
 };
 

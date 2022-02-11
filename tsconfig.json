@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // 指定编译后的版本目录
+    "target": "esnext",
+    // 指定要使用的模板标准
+    "module": "esnext",
+    // 启动所有的类型检查
+    "strict": true,
+    // 选择模块解析策略
+    "moduleResolution": "Node",
+    // 允许从没有默认导出的模块中默认导入
+    "allowSyntheticDefaultImports": true,
+    // 解析非相对模块名称的基本目录
+    "baseUrl": "src",
+    // 模块名到baseUrl的路径映射
+    "paths": {
+      "@/*": ["*"]
+    },
+    // 指定jsx代码的开发环境
+    "jsx": "react-jsx",
+  },
+  // 包含目录
+  "include": [
+    "src",
+  ],
+  // 不包含的编译目录
+  "exclude": ["node_modules"]
+}
