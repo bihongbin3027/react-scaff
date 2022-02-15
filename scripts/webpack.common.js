@@ -1,4 +1,6 @@
 const path = require("path");
+// 补全类型检查功能
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 编译进度条
 const WebpackBarPlugin = require("webpackbar");
@@ -11,7 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|js)x?$/,
-        use: "ts-loader",
+        use: "babel-loader",
         exclude: /node_modules/,
       },
     ],
@@ -25,6 +27,16 @@ module.exports = {
     },
   },
   plugins: [
+    // 补全类型检查功能
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: "write-references",
+      },
+    }),
     // index.html
     new HtmlWebpackPlugin({
       filename: "index.html",

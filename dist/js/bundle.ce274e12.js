@@ -1,34 +1,30 @@
-/******/ (() => { // webpackBootstrap
+/******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 882:
-/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
+/***/ 368:
+/***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(893);
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
 var react_dom = __webpack_require__(935);
-// EXTERNAL MODULE: ./node_modules/lodash/lodash.js
-var lodash = __webpack_require__(486);
-var lodash_default = /*#__PURE__*/__webpack_require__.n(lodash);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(893);
 ;// CONCATENATED MODULE: ./src/App.tsx
 
 
 function App() {
-    console.log(lodash_default().unionWith([1, 2], [1, 3]));
-    let a = 512;
-    return (0,jsx_runtime.jsx)("div", { children: "React" }, void 0);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+    children: "React"
+  });
 }
-/* harmony default export */ const src_App = (App);
 
+/* harmony default export */ var src_App = (App);
 ;// CONCATENATED MODULE: ./src/index.tsx
 
 
 
-react_dom.render((0,jsx_runtime.jsx)(src_App, {}, void 0), document.getElementById("root"));
-
+react_dom.render( /*#__PURE__*/(0,jsx_runtime.jsx)(src_App, {}), document.getElementById("root"));
 
 /***/ })
 
@@ -46,16 +42,13 @@ react_dom.render((0,jsx_runtime.jsx)(src_App, {}, void 0), document.getElementBy
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -66,9 +59,9 @@ react_dom.render((0,jsx_runtime.jsx)(src_App, {}, void 0), document.getElementBy
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 		__webpack_require__.O = function(result, chunkIds, fn, priority) {
 /******/ 			if(chunkIds) {
 /******/ 				priority = priority || 0;
 /******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
@@ -77,10 +70,12 @@ react_dom.render((0,jsx_runtime.jsx)(src_App, {}, void 0), document.getElementBy
 /******/ 			}
 /******/ 			var notFulfilled = Infinity;
 /******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var chunkIds = deferred[i][0];
+/******/ 				var fn = deferred[i][1];
+/******/ 				var priority = deferred[i][2];
 /******/ 				var fulfilled = true;
 /******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every(function(key) { return __webpack_require__.O[key](chunkIds[j]); })) {
 /******/ 						chunkIds.splice(j--, 1);
 /******/ 					} else {
 /******/ 						fulfilled = false;
@@ -95,60 +90,15 @@ react_dom.render((0,jsx_runtime.jsx)(src_App, {}, void 0), document.getElementBy
 /******/ 			}
 /******/ 			return result;
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/node module decorator */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nmd = (module) => {
-/******/ 			module.paths = [];
-/******/ 			if (!module.children) module.children = [];
-/******/ 			return module;
-/******/ 		};
-/******/ 	})();
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// no baseURI
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
@@ -168,15 +118,17 @@ react_dom.render((0,jsx_runtime.jsx)(src_App, {}, void 0), document.getElementBy
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		__webpack_require__.O.j = function(chunkId) { return installedChunks[chunkId] === 0; };
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 		var webpackJsonpCallback = function(parentChunkLoadingFunction, data) {
+/******/ 			var chunkIds = data[0];
+/******/ 			var moreModules = data[1];
+/******/ 			var runtime = data[2];
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
 /******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 			if(chunkIds.some(function(id) { return installedChunks[id] !== 0; })) {
 /******/ 				for(moduleId in moreModules) {
 /******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
@@ -198,14 +150,14 @@ react_dom.render((0,jsx_runtime.jsx)(src_App, {}, void 0), document.getElementBy
 /******/ 		var chunkLoadingGlobal = self["webpackChunkreact_scaff"] = self["webpackChunkreact_scaff"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [736], () => (__webpack_require__(882)))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [736], function() { return __webpack_require__(368); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
