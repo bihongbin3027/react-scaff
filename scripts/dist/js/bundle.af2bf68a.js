@@ -14,6 +14,13 @@ var jsx_runtime = __webpack_require__(893);
 
 
 function App() {
+  var add = function add() {
+    var c = 2 + 1;
+    var b = 100;
+    console.log(c);
+  };
+
+  add();
   return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
     children: "React"
   });

@@ -16,6 +16,8 @@ const devConfig = {
   cache: {
     // 持久化缓存，改善构建速度
     type: "filesystem",
+    // 将开发环境编译结果写入硬盘缓存（node_modules/.cache/webpack）
+    cacheDirectory: "node_modules/.cache/webpack",
   },
 };
 

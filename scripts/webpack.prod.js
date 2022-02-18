@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // 优化和压缩css
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // 优化减少js
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const terserPlugin = require("terser-webpack-plugin");
 // 复制文件到构建目录
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
@@ -14,16 +14,22 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "js/[name].[chunkhash:8].js",
+    // 输出目录
+    path: path.resolve(__dirname, "dist"),
     // 在生成文件之前清空output目录
     clean: true,
   },
   optimization: {
     //  在编译时每当有错误时，就会发送静态资源
     emitOnErrors: true,
+    // 创建一个额外的文件或chunk，减少entry chunk体积
+    runtimeChunk: true,
     // 分离chunks
     splitChunks: {
       // 所有的 chunks 代码公共的部分分离出来成为一个单独的文件
       chunks: "all",
+      // 生成 chunk 的最小体积，模块要大于30kb才会进行提取
+      minSize: 3000,
       cacheGroups: {
         vendor: {
           name: "vendor",
@@ -38,7 +44,7 @@ const prodConfig = {
     minimize: false,
     minimizer: [
       // 优化减少js
-      new UglifyJsPlugin(),
+      new terserPlugin(),
       // 优化和压缩css
       new CssMinimizerPlugin(),
     ],
