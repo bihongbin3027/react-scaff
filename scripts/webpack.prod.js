@@ -1,8 +1,6 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common");
-// 提取css单独一个文件
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // 优化和压缩css
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // 优化减少js
@@ -13,16 +11,15 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const prodConfig = {
   mode: "production",
   output: {
-    filename: "js/[name].[chunkhash:8].js",
     // 输出目录
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     // 在生成文件之前清空output目录
     clean: true,
   },
   optimization: {
-    //  在编译时每当有错误时，就会发送静态资源
+    // 在编译时每当有错误时，就会发送静态资源
     emitOnErrors: true,
-    // 创建一个额外的文件或chunk，减少entry chunk体积
+    // 每个入口点添加一个仅包含运行时的额外块（runtime~bundle.js），减少entry chunk体积
     runtimeChunk: true,
     // 分离chunks
     splitChunks: {
@@ -50,11 +47,6 @@ const prodConfig = {
     ],
   },
   plugins: [
-    // 提取css单独一个文件
-    new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash].css",
-      chunkFilename: "css/[name].[contenthash].css",
-    }),
     // 处理静态文件夹 static 复制到打包的 static 文件夹
     new CopyWebpackPlugin({
       patterns: [

@@ -1,6 +1,8 @@
+import a from "@/home";
+
 function App() {
   const add = () => {
-    let c = 2 + 1;
+    let c = 2 + 1 + a.a;
     let b = 100;
     console.log(c);
   };
