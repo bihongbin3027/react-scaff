@@ -10,6 +10,10 @@ const devConfig = {
     open: true,
     port: 8080,
   },
+  optimization: {
+    // webpack选择模块id时使用的算法，'named'对调试更友好的可读id
+    chunkIds: "named",
+  },
 };
 
 module.exports = merge(commonConfig, devConfig);
