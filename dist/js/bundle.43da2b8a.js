@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkreact_scaff"] = self["webpackChunkreact_scaff"] || []).push([[296],{
 
-/***/ 705:
+/***/ 402:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 
@@ -39,6 +39,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Home = /*#__PURE__*/function (_React$Component) {
   _inherits(Home, _React$Component);
 
@@ -53,8 +54,18 @@ var Home = /*#__PURE__*/function (_React$Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-        children: "home"
+      return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+          style: {
+            width: 100,
+            height: 100,
+            background: "url(static/svg/square-big.svg)"
+          }
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          src: "static/svg/square-big.svg",
+          width: "100",
+          height: "100"
+        })]
       });
     }
   }], [{
@@ -72,7 +83,7 @@ _defineProperty(Home, "state", {
 });
 
 /* harmony default export */ var home = (Home);
-;// CONCATENATED MODULE: ./src/App.tsx
+;// CONCATENATED MODULE: ./src/app.tsx
 
 
 
@@ -91,19 +102,19 @@ function App() {
   });
 }
 
-/* harmony default export */ var src_App = (App);
+/* harmony default export */ var app = (App);
 ;// CONCATENATED MODULE: ./src/index.tsx
 
 
 
-react_dom.render( /*#__PURE__*/(0,jsx_runtime.jsx)(src_App, {}), document.getElementById("root"));
+react_dom.render( /*#__PURE__*/(0,jsx_runtime.jsx)(app, {}), document.getElementById("root"));
 
 /***/ })
 
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, [736], function() { return __webpack_exec__(705); });
+/******/ __webpack_require__.O(0, [736], function() { return __webpack_exec__(402); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// 复制文件到构建目录
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 // 补全类型检查功能
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 // 提取css单独一个文件
@@ -40,6 +42,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./index.html",
+    }),
+    // 处理静态文件夹 static 复制到打包的 static 文件夹
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "../static"),
+          to: "static",
+          // 复制空文件夹不允许报错
+          noErrorOnMissing: true,
+        },
+      ],
     }),
     // 提取css单独一个文件
     new MiniCssExtractPlugin({

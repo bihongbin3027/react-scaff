@@ -10,7 +10,18 @@ class Home extends React.Component {
   }
 
   render() {
-    return <div>home</div>;
+    return (
+      <div>
+        <div
+          style={{
+            width: 100,
+            height: 100,
+            background: "url(static/svg/square-big.svg)",
+          }}
+        ></div>
+        <img src="static/svg/square-big.svg" width="100" height="100" />
+      </div>
+    );
   }
 }
 

@@ -1,12 +1,10 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common");
-// 优化和压缩css
+// 优化和最小化css
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-// 优化和压缩js
+// 优化和最小化js
 const terserPlugin = require("terser-webpack-plugin");
-// 复制文件到构建目录
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const prodConfig = {
   mode: "production",
@@ -34,33 +32,18 @@ const prodConfig = {
           name: "vendor",
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
-          // 只打包初始时依赖的第三方
-          chunks: "initial",
         },
       },
     },
     // 是否压缩
     minimize: false,
     minimizer: [
-      // 优化和压缩js
+      // 优化和最小化js
       new terserPlugin(),
-      // 优化和压缩css
+      // 优化和最小化css
       new CssMinimizerPlugin(),
     ],
   },
-  plugins: [
-    // 处理静态文件夹 static 复制到打包的 static 文件夹
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "../static"),
-          to: "static",
-          // 复制空文件夹不允许报错
-          noErrorOnMissing: true,
-        },
-      ],
-    }),
-  ],
 };
 
 module.exports = merge(commonConfig, prodConfig);
