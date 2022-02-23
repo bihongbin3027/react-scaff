@@ -35,7 +35,7 @@ npm run build 或者 yarn build
 
 - [`@babel/core`](https://www.npmjs.com/package/@babel/core) - babel 转换核心
 - [`@babel/plugin-proposal-class-properties`](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) - 支持 class 上添加属性
-- [`@babel/plugin-proposal-class-properties`](@babel/plugin-proposal-object-rest-spread) - 支持 Object rest spread
+- [`@babel/plugin-proposal-object-rest-spread`](https://babeljs.io/docs/en/babel-plugin-proposal-object-rest-spread) - 支持 Object rest spread
 - [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - babel 默认配置
 
 ### Loaders
@@ -57,5 +57,3 @@ npm run build 或者 yarn build
 ## Author
 
 - [BiHongBin](https://www.zuotiangood.top)
-
-This project is open source and available under the [MIT License](LICENSE).
