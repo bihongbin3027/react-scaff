@@ -5,6 +5,8 @@ const devConfig = {
   mode: "development",
   // 如何生成source map
   devtool: "eval-source-map",
+  // 编译时的模块统计信息：只在发生错误或新的编译开始时输出
+  stats: "minimal",
   devServer: {
     // 默认打开localhost:8080
     open: true,

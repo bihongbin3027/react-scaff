@@ -8,6 +8,8 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // 编译进度条
 const WebpackBarPlugin = require("webpackbar");
+// 编译时命令行显示日志优化（编译成功、编译警告、编译失败）
+const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -22,6 +24,10 @@ module.exports = {
         test: /\.(ts|js)x?$/,
         use: "babel-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
     ],
   },
@@ -71,5 +77,7 @@ module.exports = {
     }),
     // 编译进度条
     new WebpackBarPlugin(),
+    // 编译时命令行显示日志优化（编译成功、编译警告、编译失败）
+    new FriendlyErrorsPlugin(),
   ],
 };

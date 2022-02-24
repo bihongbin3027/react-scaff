@@ -40,7 +40,10 @@ npm run build 或者 yarn build
 
 ### Loaders
 
-- [`babel-loader`](https://webpack.js.org/loaders/babel-loader/) - 使用 babel 编译为浏览器可执行的 js 语法
+- [`babel-loader`](https://webpack.js.org/loaders/babel-loader) - 加载器处理 js
+- [`postcss-loader`](https://github.com/webpack-contrib/postcss-loader) - 加载器处理 css
+- [`style-loader`](https://github.com/webpack-contrib/style-loader) - 加载器将 css 插入 DOM
+- [`css-loader`](https://github.com/webpack-contrib/css-loader) - 加载器解析 import 和 url
 
 ### Plugins
 
@@ -48,11 +51,17 @@ npm run build 或者 yarn build
 - [`copy-webpack-plugin`](https://github.com/webpack-contrib/copy-webpack-plugin) - 复制文件到指定目录
 - [`html-webpack-plugin`](https://github.com/jantimon/html-webpack-plugin) - 从模板生成 HTML 文件
 - [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) - 提取 css 到单独文件
-- [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - 优化和最小化 css
+- [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin) - 优化和最小化 css
+- [`terser-webpack-plugin`](https://github.com/webpack-contrib/terser-webpack-plugin) - 优化和最小化 js
+- [`friendly-errors-webpack-plugin`](https://github.com/geowarin/friendly-errors-webpack-plugin) - 编译时命令行显示日志优化
 
 ### Linters
 
 - [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) - 添加 prettier 规则
+
+### Css
+
+- [`tailwindcss`](https://tailwindcss.com/) - 一款优秀的 CSS 框架
 
 ## Author
 

@@ -14,6 +14,8 @@ const prodConfig = {
     // 在生成文件之前清空output目录
     clean: true,
   },
+  // 编译时的模块统计信息：信息标准输出
+  stats: "normal",
   optimization: {
     // webpack选择模块id时使用的算法，'deterministic'编译中不变的短数字id，有益于长期缓存
     chunkIds: "deterministic",

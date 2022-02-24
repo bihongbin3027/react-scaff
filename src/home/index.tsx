@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 class Home extends React.Component {
   static state = {
@@ -11,15 +12,14 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <div
-          style={{
-            width: 100,
-            height: 100,
-            background: "url(static/svg/square-big.svg)",
-          }}
-        ></div>
-        <img src="static/svg/square-big.svg" width="100" height="100" />
+      <div className="flex">
+        <h1 className="txt-3xl font-bold underline w-50">react</h1>
+        <img
+          className="w-100"
+          src="static/svg/square-big.svg"
+          width="100"
+          height="100"
+        />
       </div>
     );
   }
