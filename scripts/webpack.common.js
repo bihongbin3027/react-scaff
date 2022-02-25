@@ -6,6 +6,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 // 提取css单独一个文件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// eslint
+const ESLintPlugin = require("eslint-webpack-plugin");
 // 编译进度条
 const WebpackBarPlugin = require("webpackbar");
 // 编译时命令行显示日志优化（编译成功、编译警告、编译失败）
@@ -74,6 +76,11 @@ module.exports = {
         },
         mode: "write-references",
       },
+    }),
+    // eslint
+    new ESLintPlugin({
+      context: path.resolve("src"),
+      exclude: "/node_modules",
     }),
     // 编译进度条
     new WebpackBarPlugin(),

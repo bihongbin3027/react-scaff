@@ -61,7 +61,7 @@ npm run build 或者 yarn build
 
 ### Css
 
-- [`tailwindcss`](https://tailwindcss.com/) - 一款优秀的 CSS 框架
+- [`tailwindcss`](https://tailwindcss.com/) - 一款优秀的 CSS 框架，建议在 VS Code 中安装 Tailwind CSS IntelliSense 插件配合使用
 
 ## Author
 
