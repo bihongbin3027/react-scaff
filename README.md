@@ -57,7 +57,10 @@ npm run build 或者 yarn build
 
 ### Linters
 
-- [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) - 添加 prettier 规则
+- [`eslint-webpack-plugin`](https://github.com/webpack-contrib/eslint-webpack-plugin) - eslint-webpack-plugin
+- [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) - prettier
+- [`eslint-plugin-react`](https://github.com/yannickcr/eslint-plugin-react) - eslint-plugin-react
+- [`eslint-plugin-react-hooks`](https://reactjs.org/docs/hooks-rules.html) - eslint-plugin-react
 
 ### Css
 
