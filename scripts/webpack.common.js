@@ -79,6 +79,7 @@ module.exports = {
     }),
     // eslint
     new ESLintPlugin({
+      extensions: ["js", "jsx", "ts", "tsx"],
       context: path.resolve("src"),
       exclude: "/node_modules",
     }),

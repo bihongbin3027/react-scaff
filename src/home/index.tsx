@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import "./index.css";
 
-function Home() {
+interface HomeType {
+  params: string;
+}
+
+function Home(props: HomeType) {
   const [count, setCount] = useState(0);
   const a = 2;
   const b = 2;
-  const c = 3;
-  const d = 5;
 
   if (a == b) {
     console.log("c", a + b);
+    console.log("props.params", props.params);
   }
 
   useEffect(() => {
     console.log("count", count);
-  }, []);
+  }, [count]);
 
   return (
     <div className="flex">
