@@ -1,7 +1,7 @@
 import Home from "@/home";
 
 function App() {
-  return <Home params="1" />;
+  return <Home />;
 }
 
 export default App;

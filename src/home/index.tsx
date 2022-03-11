@@ -1,41 +1,47 @@
-import { useEffect, useState } from "react";
 import "./index.css";
 
-interface HomeType {
-  params: string;
-}
-
-function Home(props: HomeType) {
-  const [count, setCount] = useState(0);
-  const a = 2;
-  const b = 2;
-
-  if (a == b) {
-    console.log("c", a + b);
-    console.log("props.params", props.params);
-  }
-
-  useEffect(() => {
-    console.log("count", count);
-  }, [count]);
-
+function Home() {
   return (
-    <div className="flex">
-      <h1
-        className="txt-3xl font-bold underline w-50"
-        onClick={() => {
-          setCount(count + 1);
-        }}
-      >
-        react
-      </h1>
-      <img
-        className="w-100"
-        src="static/svg/square-big.svg"
-        width="100"
-        height="100"
-      />
-    </div>
+    <>
+      <div className="flex items-center space-x-2 text-base">
+        <h4 className="font-semibold text-slate-900">Contributors</h4>
+        <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-700">
+          204
+        </span>
+      </div>
+      <div className="mt-3 flex -space-x-2 overflow-hidden">
+        <img
+          className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+          src="static/svg/square-big.svg"
+          alt=""
+        />
+        <img
+          className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+          src="static/svg/square-big.svg"
+          alt=""
+        />
+        <img
+          className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+          src="static/svg/square-big.svg"
+          alt=""
+        />
+        <img
+          className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+          src="static/svg/square-big.svg"
+          alt=""
+        />
+        <img
+          className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+          src="static/svg/square-big.svg"
+          alt=""
+        />
+      </div>
+      <div className="mt-3 text-sm font-medium">
+        <a href="#" className="text-blue-500">
+          + 198 others
+        </a>
+      </div>
+    </>
   );
 }
 
