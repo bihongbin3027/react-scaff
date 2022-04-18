@@ -11,7 +11,7 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 // 编译进度条
 const WebpackBarPlugin = require("webpackbar");
 // 编译时命令行显示日志优化（编译成功、编译警告、编译失败）
-const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
+const FriendlyErrorsPlugin = require("@soda/friendly-errors-webpack-plugin");
 
 module.exports = {
   entry: {
