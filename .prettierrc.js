@@ -9,4 +9,6 @@ module.exports = {
   trailingComma: "all",
   // 要分号
   semi: true,
+  // 行结尾
+  endOfLine: "auto",
 };

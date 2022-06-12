@@ -1,4 +1,4 @@
-# 基于 webpack5 搭建的 react 开发脚手架
+# 基于 webpack5 搭建的 react18 开发脚手架
 
 ## 安装
 
